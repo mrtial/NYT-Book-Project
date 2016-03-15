@@ -1,0 +1,52 @@
+.container{
+  width: 100%;
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+  /*overflow: hidden;*/
+}
+
+.book{
+  /*box-sizing: border-box;*/
+
+}
+
+.cover {
+  height: 320px;
+  width: auto;
+  margin:10px;
+}
+
+/*.back{
+  height: 320px;
+  width: auto;
+  margin:10px;
+  background-color: yellow;
+  overflow: hidden;
+}*/
+
+.bookShelf{
+  width: 80%;
+  height: 420px;
+  overflow: auto;
+  white-space:nowrap;
+  overflow: scroll;
+
+  display:inline-flex;
+  -webkit-align-items: center;
+  align-items:flex-end;
+  align-content:center;
+  /*justify-content: center;*/
+  margin-right: auto;
+  margin-left: auto;
+
+
+
+}
+
+/*Scrolling Effect*/
+
+/*.cover:hover {
+  height: 380px;
+  transition: height .5s;
+}*/
