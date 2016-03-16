@@ -27,44 +27,48 @@ function apiRequest(selector){
         $('#coverflow').children().remove();
         for(var i=0; i<10; i++){
           var obj = data.results.books[i];
-          var temp = new Book(obj,$('#coverflow'));
+          var temp = new Book(obj,$('#coverflow'),i);
         }
       }
      });
 }
 
-function Book(obj, $parent){
+function Book(obj, $parent,i){
   this.title=obj.title;
   this.author=obj.author;
   this.book_image=obj.book_image;
   this.description=obj.description;
 
+  var $bookcase = $('<div></div>').attr('id','case'+i);
+
+  var $book =$('<div></div>').addClass('book').attr('id','b'+i);
+  var $front = $('<div></div>').addClass('front');
+  var $back = $('<div></div>').addClass('back','flipped');
+
   var $img = $('<img>').attr('src', this.book_image).addClass('cover');
+  $front.append($img);
 
-  // var $bookInfo = $('<div></div>').addClass('back');
-  // var $title = $('<h3></h3>').text(this.title).appendTo($bookInfo);
-  // var $author = $('<h4></h4>').text(this.author).appendTo($bookInfo);
-  // var $description = $('<p></p>').text(this.description).appendTo($bookInfo);
+  var $title = $('<h3></h3>').text(this.title).appendTo($back);
+  var $author = $('<h4></h4>').text(this.author).appendTo($back);
+  var $description = $('<p></p>').text(this.description).appendTo($back);
   
+  $book.append($front).appendTo($bookcase);
+  $book.append($back).appendTo($bookcase);
+  $parent.append($bookcase);
 
-  $parent.append($img);
+  $('#case'+i).on('click',function(e){
+    $('#case'+i).toggleClass('flipped');
+    // $('.book>.front').toggleClass('flipped');
+    // $('.book>.back').toggleClass('flipped');
+  });
+
 }
 
 // Click Event:
-$bookShelf.on('click','.cover',function(e){
-  console.log(e.target);
 
+$('#card').on('click',function(e){
+  $('#card').toggleClass('flipped');
 });
 
 
 
-
-// backup
-  // var $bookInfo = $('<div></div>').addClass('back');
-  // var $title = $('<h3></h3>').text(this.title).appendTo($bookInfo);
-  // var $author = $('<h4></h4>').text(this.author).appendTo($bookInfo);
-  // var $description = $('<p></p>').text(this.description).appendTo($bookInfo);
-  
-  // $book.append($bookCover);
-  // $book.append($bookInfo);
-  // $parent.append($book);

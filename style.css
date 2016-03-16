@@ -3,11 +3,52 @@
   margin-left:auto;
   margin-right: auto;
   text-align: center;
-  /*overflow: hidden;*/
+  overflow: hidden;
+
+}
+
+.bookShelf{
+  width: 90%;
+  height: 400px;
+  white-space:nowrap;
+  overflow: scroll;
+  margin: 0 auto;
+  margin-top:30px;
+  margin-bottom: 50px;
+  position: relative;
+  /*border: 3px solid blue;*/
+
+}
+
+.coverflow{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  left:50%;
+  top:50%;
+  align-items:flex-end;
+  /*transform: translate(-50%,-50%);*/
+
 }
 
 .book{
-  /*box-sizing: border-box;*/
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items:center;
+  align-content: center;
+  box-sizing: content-box;
+  /*border:3px solid green;*/
+
+}
+
+.front{
+  width: auto;
+  height: auto;
+  /*align-content: center;*/
+  /*border: .5px solid black;*/
+  /*border:3px solid red;*/
+  margin: 10px;
+  box-sizing: content-box;
 
 }
 
@@ -17,34 +58,99 @@
   margin:10px;
 }
 
-/*.back{
+.back{
+  width: 250px;
   height: 320px;
-  width: auto;
+  /*align-content: center;*/
+  /*display: inline-block;*/
+  white-space: normal;
+  /*word-wrap: break-word;*/
+  border: .5px solid black;
   margin:10px;
-  background-color: yellow;
-  overflow: hidden;
-}*/
-
-.bookShelf{
-  width: 80%;
-  height: 420px;
-  overflow: auto;
-  white-space:nowrap;
-  overflow: scroll;
-
-  display:inline-flex;
-  -webkit-align-items: center;
-  align-items:flex-end;
-  align-content:center;
-  /*justify-content: center;*/
-  margin-right: auto;
-  margin-left: auto;
-
-
-
 }
 
+
 /*Scrolling Effect*/
+
+#case0,#case1,#case2,#case3,#case4,#case5,#case6,#case7,#case8,#case9{
+  height: 340px;
+  width: 250px;
+  position: relative;
+  perspective: 800px;
+  display: inline-flex;
+}
+
+#b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#b0 div,#b1 div,#b2 div,#b3 div,#b4 div,#b5 div,#b6 div,#b7 div,#b8 div,#b9 div{
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#b0 .front,#b1 .front,#b2 .front,#b3 .front,#b4 .front,#b5 .front,#b6 .front,#b7 .front,#b8 .front,#b9 .front {
+  /*background: red;*/
+}
+
+#b0 .back,#b1 .back,#b2 .back,#b3 .back,#b4 .back,#b5 .back,#b6 .back,#b7 .back,#b8 .back,#b9 .back {
+  transform: rotateY( -180deg );
+}
+
+#b0.flipped,#b1.flipped,#b2.flipped,#b3.flipped,#b4.flipped,#b5.flipped,#b6.flipped,#b7.flipped,#b8.flipped,#b9.flipped {
+  transform: rotateY( -180deg );
+}
+
+
+/*======example====================*/
+
+.container2 { 
+  width: 200px;
+  height: 260px;
+  position: relative;
+  perspective: 800px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#card .front {
+  background: red;
+}
+#card .back {
+  background: blue;
+  transform: rotateY( -180deg );
+}
+
+#card.flipped {
+  transform: rotateY( -180deg );
+}
+
+
+
+
 
 /*.cover:hover {
   height: 380px;
