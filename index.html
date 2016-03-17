@@ -4,106 +4,126 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
   
+  <header>
+    <div class="cover-box"></div>
+    <div class="cover-title"></div>
+  </header>
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="contentBox1 text-center">
+      <i class="fa fa-angle-double-down fa-4x"></i>
+    </div>  
+  </div>
+
+
+  <div class="col-md-12 text-center bigbox">
     <div class="row">
-      <h1>Book Bestseller List</h1>
+      <div class="contentBox2 text-center">
+        <h1 class="categoryTitle"></h1>
+      </div>  
+    </div>
+  </div>
+
+  <div class="row">
+    <section class="container2">
+      <div id="card0">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card1">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card2">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card3">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card4">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card5">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card6">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card7">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card8">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <section class="container2">
+      <div id="card9">
+        <figure class="front"></figure>
+        <figure class="back">
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">      
       <select id='selector'></select>
-    </div> <!-- row -->
+    </div> 
+  </div> <!-- row -->
+  
 
-    <div class="bookShelf">
-      <div id="coverflow">
-      </div> <!-- coverflow -->
-    </div> <!-- bookShelf -->
+<footer>
+  <div>
     
-  </div> <!-- container -->
+  </div>
+</footer>
 
-<div class="bigbox">
-
-  <section class="container2">
-    <div id="card0">
-      <figure class="front"><img id="m0" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9780802123411.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card1">
-      <figure class="front"><img id="m1" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9781592533251.jpeg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card2">
-      <figure class="front"><img id="m2" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9781451667325.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card3">
-      <figure class="front"><img id="m3" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9781416583431.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card4">
-      <figure class="front"><img id="m4" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9781492614074.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card5">
-      <figure class="front"><img id="m5" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9781594204784.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card6">
-      <figure class="front"><img id="m6" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9781451697711.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card7">
-      <figure class="front"><img id="m7" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9780679603993.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card8">
-      <figure class="front"><img id="m8" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9780544484122.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-  <section class="container2">
-    <div id="card9">
-      <figure class="front"><img id="m9" src="http://du.ec2.nytimes.com.s3.amazonaws.com/prd/books/9780547858197.jpg"></figure>
-      <figure class="back">
-      </figure>
-    </div>
-  </section>
-
-</div>
+<!-- </div> -->
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script type="text/javascript" src="script.js"></script>

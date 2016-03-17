@@ -1,55 +1,75 @@
+
+.cover-box {
+  position: relative;
+  height:600px;
+  background-image: url("cover_pic.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+}
+
 .container{
   width: 100%;
   margin-left:auto;
   margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
   overflow: hidden;
+}
+
+.cover-title {
+  width: 100%;
+  height: 100%;
+  /*background-image:url("cover_title.png");*/
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:50%;
+}
+
+.bigbox{
 
 }
 
-.book{
-  display: inline-flex;
-  flex-wrap: nowrap;
-  align-items:center;
-  align-content: center;
-  box-sizing: content-box;
-  /*border:3px solid green;*/
-
+.categoryTitle{
+  display: block;
 }
 
-
-.cover {
-  height: 320px;
-  width: auto;
-  margin:10px;
+.contentBox1 {
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
-
-
-
+.contentBox2{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 /*======example====================*/
 
-.bigbox{
-  width: 90%;
-  height: auto;
-  margin:0 auto;
-  display: inline-block;
-  border: 3px solid green;
-  /*position: relative;*/
- /* white-space: nowrap;
-  overflow: scroll;*/
-
-}
-
 .container2 { 
-  width: 200px;
-  height: 260px;
+  width: 240px;
+  height: 300px;
   position: relative;
   perspective: 800px;
   margin:10px;
-  box-sizing: content-box;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  /*opacity: 0;*/
+  transform: translateX(-20px);
+  transition: all 0.3s ease-in-out;
+}
 
+.container2:hover{
+  cursor: pointer;
+}
+
+.container2 .is-showing {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 #card0, #card1, #card2, #card3, #card4,
@@ -73,14 +93,13 @@
 
 #card0 .front, #card1 .front, #card2 .front, #card3 .front, #card4 .front,
 #card5 .front, #card6 .front, #card7 .front, #card8 .front, #card9 .front {
-  background: #FFFFF1;
+  background-color: yellow;
 }
 #card0 .back, #card1 .back, #card2 .back, #card3 .back, #card4 .back,
 #card5 .back, #card6 .back, #card7 .back, #card8 .back, #card9 .back {
   background: #FFFFFF;
-  border: .5px solid #F1F1F1;
+  border: 1px solid #F1F1F1;
   transform: rotateY( -180deg );
-  padding: 5px;
 }
 
 #card0.flipped, #card1.flipped,#card2.flipped, #card3.flipped, #card4.flipped,
@@ -90,11 +109,13 @@
 
 img{
   width: 100%;
-  height: 260px;
+  height: 100%;
 }
 
 
-
+.room{
+  height: 500px;
+}
 
 /*.cover:hover {
   height: 380px;

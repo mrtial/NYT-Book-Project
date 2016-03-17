@@ -1,5 +1,5 @@
 var listName = ['Animals','Business','Celebrities','Crime','Culture','Education','Espionage','Expeditions','Family','Fashion','Food and Fitness','Games','Health','Humor','Politics','Race','Relationships','Religion','Science','Sports','Travel'];
-var newList = ["Animals", "Business Books", "Celebrities", "Crime and Punishment", "Culture", "Education", "Espionage", "Expeditions Disasters and Adventures", " Family", " Fashion Manners and Customs", " Food and Fitness", " Games and Activities", " Health", " Humor", " Hardcover Political Books", " Race and Civil Rights", " Relationships", " Religion Spirituality and Faith", " Science", " Sports", "Travel"];
+var newList = ["Animals", "Business Books", "Celebrities", "Crime and Punishment", "Culture", "Education", "Espionage", "Expeditions Disasters and Adventures", "Family", "Fashion Manners and Customs", "Food and Fitness", " Games and Activities", "Health", "Humor", "Hardcover Political Books", "Race and Civil Rights", "Relationships", "Religion Spirituality and Faith", "Science", "Sports", "Travel"];
 $selector = $('#selector');
 $bookShelf = $('.bookShelf');
 $cover = $('.cover');
@@ -11,16 +11,21 @@ listName.forEach(function(el,idx){
 
 
 // API Call:
-apiRequest("Animals");
+
+var randomList = newList[Math.floor(Math.random()*20)];
+$('.categoryTitle').text(randomList);
+
+apiRequest(randomList);
 
 $selector.on('change',function(){
   apiRequest($selector.val());
 });
 
 
+
 function apiRequest(selector){
   $.ajax({
-     url: "http://api.nytimes.com/svc/books/v3/lists/"+selector+"?api-key=f9b634d7aa9a1179185fb61f3b0d39d2:19:49484404&update=monthly",
+     url: "http://api.nytimes.com/svc/books/v3/lists/"+selector+"?api-key=f9b634d7aa9a1179185fb61f3b0d39d2:19:49484404&update=weekly",
      method: "GET",
      dataType: 'json',
      success: function(data){
@@ -29,6 +34,7 @@ function apiRequest(selector){
           var temp = new Book(obj,i);
         }
       }
+
      });
 }
 
@@ -95,4 +101,20 @@ $('#card8').on('click',function(e){
 $('#card9').on('click',function(e){
   $('#card9').toggleClass('flipped');
 });
+
+
+// Scroll event
+
+$(window).scroll(function(){
+  var wScroll=$(this).scrollTop();
+  if (wScroll > $('.bigbox').offset().top) {
+
+    $('.bigbox container2').each(function(){
+      $('.bigbox container2').addClass("is-showing");
+    });
+  }
+
+});
+
+
 
