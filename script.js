@@ -24,43 +24,33 @@ function apiRequest(selector){
      method: "GET",
      dataType: 'json',
      success: function(data){
-        $('#coverflow').children().remove();
         for(var i=0; i<10; i++){
           var obj = data.results.books[i];
-          var temp = new Book(obj,$('#coverflow'),i);
+          var temp = new Book(obj,i);
         }
       }
      });
 }
 
-function Book(obj, $parent,i){
+function Book(obj,i){
   this.title=obj.title;
   this.author=obj.author;
   this.book_image=obj.book_image;
   this.description=obj.description;
 
-  var $bookcase = $('<div></div>').attr('id','case'+i);
-
-  var $book =$('<div></div>').addClass('book').attr('id','b'+i);
-  var $front = $('<div></div>').addClass('front');
-  var $back = $('<div></div>').addClass('back','flipped');
-
-  var $img = $('<img>').attr('src', this.book_image).addClass('cover');
-  $front.append($img);
-
-  var $title = $('<h3></h3>').text(this.title).appendTo($back);
-  var $author = $('<h4></h4>').text(this.author).appendTo($back);
-  var $description = $('<p></p>').text(this.description).appendTo($back);
+  var $cardId = $('#card'+i);
+  var front=$cardId.children()[0];
+  var back = $cardId.children()[1];
   
-  $book.append($front).appendTo($bookcase);
-  $book.append($back).appendTo($bookcase);
-  $parent.append($bookcase);
+  // front
+  $(front).empty();
+  var $img = $('<img>').attr('src',this.book_image).appendTo(front);
 
-  $('#case'+i).on('click',function(e){
-    $('#case'+i).toggleClass('flipped');
-    // $('.book>.front').toggleClass('flipped');
-    // $('.book>.back').toggleClass('flipped');
-  });
+  // back
+  $(back).empty();
+  var $title = $('<h3></h3>').text(this.title).appendTo(back);
+  var $author = $('<h4></h4>').text(this.author).appendTo(back);
+  var $description = $('<p></p>').text(this.description).appendTo(back);
 
 }
 
@@ -86,4 +76,23 @@ $('#card4').on('click',function(e){
   $('#card4').toggleClass('flipped');
 });
 
+$('#card5').on('click',function(e){
+  $('#card5').toggleClass('flipped');
+});
+
+$('#card6').on('click',function(e){
+  $('#card6').toggleClass('flipped');
+});
+
+$('#card7').on('click',function(e){
+  $('#card7').toggleClass('flipped');
+});
+
+$('#card8').on('click',function(e){
+  $('#card8').toggleClass('flipped');
+});
+
+$('#card9').on('click',function(e){
+  $('#card9').toggleClass('flipped');
+});
 

@@ -7,30 +7,6 @@
 
 }
 
-.bookShelf{
-  width: 90%;
-  height: 400px;
-  white-space:nowrap;
-  overflow: scroll;
-  margin: 0 auto;
-  margin-top:30px;
-  margin-bottom: 50px;
-  position: relative;
-  /*border: 3px solid blue;*/
-
-}
-
-.coverflow{
-  width: 100%;
-  height: 400px;
-  position: relative;
-  left:50%;
-  top:50%;
-  align-items:flex-end;
-  /*transform: translate(-50%,-50%);*/
-
-}
-
 .book{
   display: inline-flex;
   flex-wrap: nowrap;
@@ -55,10 +31,15 @@
 /*======example====================*/
 
 .bigbox{
-  width: 100%;
-  height: 400px;
-  display: inline-flex;
+  width: 90%;
+  height: auto;
+  margin:0 auto;
+  display: inline-block;
   border: 3px solid green;
+  /*position: relative;*/
+ /* white-space: nowrap;
+  overflow: scroll;*/
+
 }
 
 .container2 { 
@@ -67,10 +48,12 @@
   position: relative;
   perspective: 800px;
   margin:10px;
+  box-sizing: content-box;
 
 }
 
-#card0, #card1, #card2, #card3, #card4 {
+#card0, #card1, #card2, #card3, #card4,
+#card5, #card6, #card7, #card8, #card9 {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -78,7 +61,8 @@
   transition: transform 1s;
 }
 
-#card0 figure, #card1 figure, #card2 figure, #card3 figure, #card4 figure {
+#card0 figure, #card1 figure, #card2 figure, #card3 figure, #card4 figure,
+#card5 figure, #card6 figure, #card7 figure, #card8 figure, #card9 figure {
   margin: 0;
   display: block;
   position: absolute;
@@ -87,18 +71,27 @@
   backface-visibility: hidden;
 }
 
-#card0 .front, #card1 .front, #card2 .front, #card3 .front, #card4 .front {
-  background: red;
+#card0 .front, #card1 .front, #card2 .front, #card3 .front, #card4 .front,
+#card5 .front, #card6 .front, #card7 .front, #card8 .front, #card9 .front {
+  background: #FFFFF1;
 }
-#card0 .back, #card1 .back, #card2 .back, #card3 .back, #card4 .back {
-  background: blue;
+#card0 .back, #card1 .back, #card2 .back, #card3 .back, #card4 .back,
+#card5 .back, #card6 .back, #card7 .back, #card8 .back, #card9 .back {
+  background: #FFFFFF;
+  border: .5px solid #F1F1F1;
+  transform: rotateY( -180deg );
+  padding: 5px;
+}
+
+#card0.flipped, #card1.flipped,#card2.flipped, #card3.flipped, #card4.flipped,
+#card5.flipped, #card6.flipped,#card7.flipped, #card8.flipped, #card9.flipped {
   transform: rotateY( -180deg );
 }
 
-#card0.flipped, #card1.flipped,#card2.flipped, #card3.flipped, #card4.flipped {
-  transform: rotateY( -180deg );
+img{
+  width: 100%;
+  height: 260px;
 }
-
 
 
 
