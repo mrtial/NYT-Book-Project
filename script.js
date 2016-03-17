@@ -66,9 +66,24 @@ function Book(obj, $parent,i){
 
 // Click Event:
 
-$('#card').on('click',function(e){
-  $('#card').toggleClass('flipped');
+$('#card0').on('click',function(e){
+  $('#card0').toggleClass('flipped');
 });
 
+$('#card1').on('click',function(e){
+  $('#card1').toggleClass('flipped');
+});
+
+$('#card2').on('click',function(e){
+  $('#card2').toggleClass('flipped');
+});
+
+$('#card3').on('click',function(e){
+  $('#card3').toggleClass('flipped');
+});
+
+$('#card4').on('click',function(e){
+  $('#card4').toggleClass('flipped');
+});
 
 
