@@ -12,18 +12,19 @@ listName.forEach(function(el,idx){
 
 // API Call:
 
-var randomList = newList[Math.floor(Math.random()*20)];
-$('.categoryTitle').text(randomList);
+var random = Math.floor(Math.random()*20);
+$('.categoryTitle').text(listName[random]);
 
-apiRequest(randomList);
+apiRequest(newList[random]);
 
 $selector.on('change',function(){
+  $('.categoryTitle').text($selector.val());
   apiRequest($selector.val());
 });
 
 
-
 function apiRequest(selector){
+
   $.ajax({
      url: "http://api.nytimes.com/svc/books/v3/lists/"+selector+"?api-key=f9b634d7aa9a1179185fb61f3b0d39d2:19:49484404&update=weekly",
      method: "GET",
@@ -43,6 +44,8 @@ function Book(obj,i){
   this.author=obj.author;
   this.book_image=obj.book_image;
   this.description=obj.description;
+  this.book_review =obj.book_review_link;
+  this.sunday_review= obj.sunday_review_link;
 
   var $cardId = $('#card'+i);
   var front=$cardId.children()[0];
@@ -50,7 +53,9 @@ function Book(obj,i){
   
   // front
   $(front).empty();
+  var $heart = $('<i class="fa fa-heart fa-2x"></i>').attr('id','heart'+i).appendTo(front);
   var $img = $('<img>').attr('src',this.book_image).appendTo(front);
+
 
   // back
   $(back).empty();
@@ -58,7 +63,24 @@ function Book(obj,i){
   var $author = $('<h4></h4>').text(this.author).appendTo(back);
   var $description = $('<p></p>').text(this.description).appendTo(back);
 
+  //get review
+  var review =[this.book_review, this.sunday_review];
+  if (review[0]!==""){
+  //add 'review' button
+    var $link = $('<a target="_blank"></a>').attr('href',this.book_review);
+    var reviewBtn = $('<button>review</button>').addClass('btn-xs btn-danger').appendTo($link);
+    $link.appendTo($(back));
+  }
 }
+
+// Get Element from review
+function getArticle(link){
+  $get(link,function(doc){
+    var article = doc.document;
+    var a_title = article.document.getElementsByClassName('articleHeadline')[0].innerText;
+  });
+}
+
 
 // Click Event:
 
@@ -102,19 +124,21 @@ $('#card9').on('click',function(e){
   $('#card9').toggleClass('flipped');
 });
 
-
-// Scroll event
-
-$(window).scroll(function(){
-  var wScroll=$(this).scrollTop();
-  if (wScroll > $('.bigbox').offset().top) {
-
-    $('.bigbox container2').each(function(){
-      $('.bigbox container2').addClass("is-showing");
-    });
-  }
-
+$('#card10').on('click',function(e){
+  $('#card10').toggleClass('flipped');
 });
+
+$('#card11').on('click',function(e){
+  $('#card11').toggleClass('flipped');
+});
+
+
+//My Collection
+// $collection = $('#collection_container');
+// $('.fa-heart').on('click',function(e){
+//   console.log(e.targrt);
+
+// });
 
 
 
